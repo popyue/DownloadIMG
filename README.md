@@ -39,7 +39,6 @@ pip install requests
 - Python string operation 
 1. [Removing newline character from strings](https://www.geeksforgeeks.org/python-removing-newline-character-from-string/)
 
-
 - Python BeautifulSoup
 1. [BeautifulSoup Usage Guidline](https://beautiful-soup-4.readthedocs.io/en/latest/#a-regular-expression)
 2. [Find element by class](https://stackoverflow.com/questions/5041008/how-to-find-elements-by-class)
@@ -49,6 +48,17 @@ pip install requests
 
 - Python Markdown Convert
 1. [Use markdown Lib to convert markdown to HTML](https://www.digitalocean.com/community/tutorials/how-to-use-python-markdown-to-convert-markdown-text-to-html)
+2. [Python - markdown convert](https://segmentfault.com/q/1010000043277064)
+
+
+- Python Download from URL
+
+1. [Python - Download IMAGE from URL by requests](https://blog.51cto.com/u_16099185/6385805)
+2. [Python - Download image from URL](https://ithelp.ithome.com.tw/articles/10211545)
+3. [Python - Download images from URL 2](https://tw.from-locals.com/python-download-web-images/)
+4. [Python - file operation - about path](https://medium.com/seaniap/python-%E4%BD%BF%E7%94%A8%E6%AA%94%E6%A1%88%E7%B3%BB%E7%B5%B1-eaecbe7001dd)
+5. [Python - Download image](https://www.geeksforgeeks.org/how-to-download-an-image-from-a-url-in-python/)
+6. [Python - Download Image from URL and save it](https://www.jianshu.com/p/938763947de3)
 
 - Python error handling 
 - Description:
@@ -76,6 +86,9 @@ names()
 2. [Fix - local variable 'a' referenced before assignment - 2](https://sabe.io/blog/python-local-variable-referenced-before-assignment#google_vignette)
 3. [Fix - local variable 'a' referenced before assignment - 3](https://itslinuxfoss.com/local-variable-referenced-assignment-python/)
 4. [Fix - local variable 'a' referenced before assignment - 4](https://www.pythonpool.com/local-variable-referenced-before-assignment/)
+5. [Fix - Bad Descriptor Error](https://developer.aliyun.com/article/401335)
+
+
 
 ## Information 
 
