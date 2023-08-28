@@ -39,17 +39,15 @@ def parse(target):
 		#print(mk)	
 	return mk
 
-
 def imageExtract(mkContent):
 	# Extract Image URL from Markdown Content
 	# Declare
 	images = []
 	mkConvert = markdown(mkContent) # Convert markdown to HTML
+	#print(mkConvert)
 	soup = BeautifulSoup(mkConvert, 'html.parser') # Parse HTML content
 	for i in soup.find_all('img'):
 		images.append(i.attrs['src'])
-	#print(images)
-	#print(len(images))
 	return images
 
 def createDir(dirName):
@@ -72,12 +70,11 @@ def downloadImage(path, imagesURL):
 	for imageindex in range(len(imagesURL)):
 		res = requests.get(str(imagesURL[imageindex]), stream=True)
 		fullPath = path+'/'+str(imageindex)
-		print(fullPath)
+		#print(fullPath)
 		if res.status_code == 200:
 			with open(fullPath, 'wb') as file:
 				file.write(res.content)
 			#print('Image Successfully Downloaded: ', imageindex)
-			#file.close()
 		else:
 			print('Image Couldn\'t be retrieved!!!')
 
@@ -86,11 +83,12 @@ def main():
 	mkDatas = []
 	imagesURL = []
 	hackmdURL = readTargetFromFile()
+	print(hackmdURL)
 	# Extract markdown contents
 	for targetURL in hackmdURL:
-		#print(targetURL)
 		mkDatas.append(parse(targetURL))
-		#print(mkDatas)
+
+	#print(mkDatas)
 	#print(mkDatas[0][0])
 	#print(mkDatas[1][0])
 
@@ -98,30 +96,20 @@ def main():
 	for index in range(len(mkDatas)):
 		# Extract Title from markdown
 		# Using Title to set up directory Name
-		title = re.findall(r'^#\s(\S*)\n', str(mkDatas[index][0]))[0]
+		#regex = r'^#\s(\S*)\n'
+		regex = r'^#\s(.+)\n'
+		sourceSTR = str(mkDatas[index][0])
+		title = re.findall(regex, sourceSTR)[0] 
+		#print(title)
 		createDir(title)
 		dirPath = os.path.abspath(title)
 
 		# Extract images
 		mkDatas[index][0]
 		imagesURL = imageExtract(mkDatas[index][0])
-		#print(imagesURL)
-		downloadImage(dirPath, imagesURL)	
-
-	#mkContent = str(markdownDatas[0][0])
-	#print(markdown(markcontent))
-	#converted = markdown(markcontent)
-	#print(converted)
-	'''
-	soup2 = BeautifulSoup(converted, 'html.parser')
-	datas2=[]
-	for i in soup2.find_all('img'):
-		#print(i)
-		datas2.append(i.attrs['src'])
-	'''
-	#print(datas2)
-	#print(len(datas2))
-
+		print(imagesURL)
+		print(len(imagesURL))
+		downloadImage(dirPath, imagesURL)
 
 if __name__ == '__main__':
 	main()
