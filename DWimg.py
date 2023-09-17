@@ -12,7 +12,7 @@ def readTargetFromFile():
 	# Read hackmd note URL from file
 	# Declare
 	targets=[]
-	with open('//Users//shuyue.wu//Documents//Hack_Py//DownloadImg//targets.txt') as f:
+	with open('//Users//<myusername>//Documents//Hack_Py//DownloadImg//targets.txt') as f:
 		line = f.readline()
 		while line:
 			targets.append(line.strip())
@@ -53,7 +53,7 @@ def imageExtract(mkContent):
 def createDir(dirName):
 	# Set up directory Name
 	targetDir = dirName
-	parent_dir = "//Users//shuyue.wu//Documents//Hack_Py//DownloadImg//"
+	parent_dir = "//Users//<myusername>//Documents//Hack_Py//DownloadImg//"
 	path = os.path.join(parent_dir, targetDir)
 
 	# Create directory
